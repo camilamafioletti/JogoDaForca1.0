@@ -5,106 +5,114 @@ namespace JogoDaForca.WinFormsApp
 {
     public partial class Form1 : Form
     {
-        private int numErros = 0;
-
         Forca forca;
 
         public Form1()
         {
-            forca = new Forca();
             InitializeComponent();
-            ConfigurarBotoes();
+
+            RegistrarEventos();
+
+            forca = new Forca();
+
+            ObterPalavraParcial();
+
         }
 
-        private void ConfigurarBotoes()
+        private void RegistrarEventos()
         {
-            btnA.Click += AtribuirLetra;
-            btnB.Click += AtribuirLetra;
-            btnC.Click += AtribuirLetra;
-            btnD.Click += AtribuirLetra;
-            btnE.Click += AtribuirLetra;
-            btnF.Click += AtribuirLetra;
-            btnG.Click += AtribuirLetra;
-            btnH.Click += AtribuirLetra;
-            btnI.Click += AtribuirLetra;
-            btnJ.Click += AtribuirLetra;
-            btnK.Click += AtribuirLetra;
-            btnL.Click += AtribuirLetra;
-            btnM.Click += AtribuirLetra;
-            btnN.Click += AtribuirLetra;
-            btnO.Click += AtribuirLetra;
-            btnP.Click += AtribuirLetra;
-            btnQ.Click += AtribuirLetra;
-            btnR.Click += AtribuirLetra;
-            btnS.Click += AtribuirLetra;
-            btnT.Click += AtribuirLetra;
-            btnU.Click += AtribuirLetra;
-            btnV.Click += AtribuirLetra;
-            btnW.Click += AtribuirLetra;
-            btnX.Click += AtribuirLetra;
-            btnY.Click += AtribuirLetra;
-            btnZ.Click += AtribuirLetra;
-            btnCedilha.Click += AtribuirLetra;
-        }
-        private void AtribuirLetra(object sender, EventArgs e)
-        {
-            lblPalavra.Text = forca.palavraCriptografada;
+            foreach (Button botao in pnlBotoes.Controls)
+            {
+                botao.Click += DarPalpite;
+                botao.Click += AtualizarBotoesPainel;
+            }
 
+            btnNovoJogo.Click += ReiniciarJogo;
+        }
+
+        private void DarPalpite(object? sender, EventArgs e)
+        {
             Button botaoClicado = (Button)sender;
-            char letra = botaoClicado.Text.ToUpper()[0];
 
-            if (forca.LetrasEscolhidas.Contains(letra))
-            {
-                MessageBox.Show("Letra ja escolhida!");
-                return;
-            }
+            char palpite = botaoClicado.Text[0];
 
-            forca.LetrasEscolhidas.Add(letra);
+            if (forca.JogadorAcertou(palpite) || forca.JogadorPerdeu())
+                FinalizarJogo();
 
-            if (forca.palavraRandom.Contains(letra))
-            {
-                for (int i = 0; i < forca.palavraRandom.Length; i++)
-                {
-                    if (forca.palavraRandom[i] == letra)
-                    {
-                        forca.palavraCriptografada = forca.palavraCriptografada.Substring(0, i) + letra + forca.palavraCriptografada.Substring(i + 1);
-                    }
-                }
+            ObterPalavraParcial();
 
-                lblPalavra.Text = forca.palavraCriptografada;
+            AtualizarForca();
+        }
+        private void ReiniciarJogo(object sender, EventArgs e)
+        {
+           forca = new Forca();
 
-                botaoClicado.BackColor = Color.Olive;
+            ObterPalavraParcial();
 
-                if (forca.palavraCriptografada == forca.palavraRandom)
-                {
-                    MessageBox.Show("Parabéns, você acertou a palavra!");
-                }
-            }
+            ObterDicaPalavra();
+
+            AtualizarForca();
+
+            lblMensagemFinal.Text = "";
+
+            pnlBotoes.Enabled = true;
+
+            foreach (Button botao in pnlBotoes.Controls)
+                botao.Enabled = true;
+        }
+
+        private void AtualizarBotoesPainel(object? sender, EventArgs e)
+        {
+            Button botaoClicado = (Button)sender;
+
+            botaoClicado.Enabled = false;
+        }
+        private void FinalizarJogo()
+        {
+
+            bool jogadorPerdeu = forca.JogadorPerdeu();
+
+            if (jogadorPerdeu)
+                lblMensagemFinal.ForeColor = Color.Red;
             else
+                lblMensagemFinal.ForeColor = Color.Green;
+
+            pnlBotoes.Enabled = false;
+
+            lblMensagemFinal.Text = forca.mensagemFinal;
+        }
+
+        private void AtualizarForca()
+        {
+            switch (forca.Erros)
             {
-                botaoClicado.BackColor = Color.Peru;
+                case 1:
+                    imgCabeca.Visible = true; break;
+                case 2:
+                    imgCorpo.Visible = true; break;
+                case 3:
+                    imgBracoD.Visible = true; break;
+                case 4:
+                    imgBracoE.Visible = true; break;
+                case 5:
+                    imgPernaD.Visible = true; break;
 
-                numErros++;
+                case 6: imgPernaE.Visible = true;break;
 
-                switch (numErros)
-                {
-                    case 1:
-                        imgCabeca.Visible = true; break;
-                    case 2:
-                        imgCorpo.Visible = true; break;
-                    case 3:
-                        imgBracoD.Visible = true; break;
-                    case 4:
-                        imgBracoE.Visible = true; break;
-                    case 5:
-                        imgPernaD.Visible = true; break;
-
-                    case 6:
-                        imgPernaE.Visible = true;
-                        MessageBox.Show("Que pena, você perdeu! A palavra era " + forca.palavraRandom);
-                        break;
-                }
+                default:
+                    imgForca.Image = Properties.Resources.forca;
+                  
+                    break;
             }
+        }
+        private void ObterPalavraParcial()
+        {
+            lblPalavra.Text = forca.PalavraParcial;
+        }
+
+        private void ObterDicaPalavra()
+        {
+            lblDica.Text = forca.QuantidadeLetras + " letras";
         }
     }
 }

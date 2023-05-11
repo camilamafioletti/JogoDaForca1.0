@@ -67,6 +67,10 @@
             label2 = new Label();
             label3 = new Label();
             lblPalavra = new Label();
+            pnlBotoes = new Panel();
+            lblDica = new Label();
+            statusMensagem = new StatusStrip();
+            lblMensagemFinal = new ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)imgForca).BeginInit();
             ((System.ComponentModel.ISupportInitialize)imgCabeca).BeginInit();
             ((System.ComponentModel.ISupportInitialize)imgCorpo).BeginInit();
@@ -74,6 +78,8 @@
             ((System.ComponentModel.ISupportInitialize)imgBracoE).BeginInit();
             ((System.ComponentModel.ISupportInitialize)imgPernaD).BeginInit();
             ((System.ComponentModel.ISupportInitialize)imgPernaE).BeginInit();
+            pnlBotoes.SuspendLayout();
+            statusMensagem.SuspendLayout();
             SuspendLayout();
             // 
             // imgForca
@@ -171,7 +177,7 @@
             btnA.BackColor = Color.Sienna;
             btnA.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnA.ForeColor = SystemColors.ButtonFace;
-            btnA.Location = new Point(220, 221);
+            btnA.Location = new Point(13, 14);
             btnA.Name = "btnA";
             btnA.Size = new Size(37, 32);
             btnA.TabIndex = 9;
@@ -183,7 +189,7 @@
             btnB.BackColor = Color.Sienna;
             btnB.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnB.ForeColor = SystemColors.ButtonFace;
-            btnB.Location = new Point(263, 221);
+            btnB.Location = new Point(56, 14);
             btnB.Name = "btnB";
             btnB.Size = new Size(37, 32);
             btnB.TabIndex = 10;
@@ -195,7 +201,7 @@
             btnC.BackColor = Color.Sienna;
             btnC.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnC.ForeColor = SystemColors.ButtonFace;
-            btnC.Location = new Point(306, 221);
+            btnC.Location = new Point(99, 14);
             btnC.Name = "btnC";
             btnC.Size = new Size(37, 32);
             btnC.TabIndex = 11;
@@ -207,7 +213,7 @@
             btnD.BackColor = Color.Sienna;
             btnD.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnD.ForeColor = SystemColors.ButtonFace;
-            btnD.Location = new Point(349, 221);
+            btnD.Location = new Point(142, 14);
             btnD.Name = "btnD";
             btnD.Size = new Size(37, 32);
             btnD.TabIndex = 12;
@@ -219,7 +225,7 @@
             btnE.BackColor = Color.Sienna;
             btnE.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnE.ForeColor = SystemColors.ButtonFace;
-            btnE.Location = new Point(392, 221);
+            btnE.Location = new Point(185, 14);
             btnE.Name = "btnE";
             btnE.Size = new Size(37, 32);
             btnE.TabIndex = 13;
@@ -231,7 +237,7 @@
             btnF.BackColor = Color.Sienna;
             btnF.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnF.ForeColor = SystemColors.ButtonFace;
-            btnF.Location = new Point(435, 221);
+            btnF.Location = new Point(228, 14);
             btnF.Name = "btnF";
             btnF.Size = new Size(37, 32);
             btnF.TabIndex = 14;
@@ -243,7 +249,7 @@
             btnG.BackColor = Color.Sienna;
             btnG.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnG.ForeColor = SystemColors.ButtonFace;
-            btnG.Location = new Point(478, 221);
+            btnG.Location = new Point(271, 14);
             btnG.Name = "btnG";
             btnG.Size = new Size(37, 32);
             btnG.TabIndex = 15;
@@ -255,7 +261,7 @@
             btnH.BackColor = Color.Sienna;
             btnH.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnH.ForeColor = SystemColors.ButtonFace;
-            btnH.Location = new Point(521, 221);
+            btnH.Location = new Point(314, 14);
             btnH.Name = "btnH";
             btnH.Size = new Size(37, 32);
             btnH.TabIndex = 16;
@@ -267,7 +273,7 @@
             btnI.BackColor = Color.Sienna;
             btnI.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnI.ForeColor = SystemColors.ButtonFace;
-            btnI.Location = new Point(564, 221);
+            btnI.Location = new Point(357, 14);
             btnI.Name = "btnI";
             btnI.Size = new Size(37, 32);
             btnI.TabIndex = 17;
@@ -279,7 +285,7 @@
             btnJ.BackColor = Color.Sienna;
             btnJ.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnJ.ForeColor = SystemColors.ButtonFace;
-            btnJ.Location = new Point(607, 221);
+            btnJ.Location = new Point(400, 14);
             btnJ.Name = "btnJ";
             btnJ.Size = new Size(37, 32);
             btnJ.TabIndex = 18;
@@ -291,7 +297,7 @@
             btnK.BackColor = Color.Sienna;
             btnK.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnK.ForeColor = SystemColors.ButtonFace;
-            btnK.Location = new Point(242, 259);
+            btnK.Location = new Point(35, 52);
             btnK.Name = "btnK";
             btnK.Size = new Size(37, 32);
             btnK.TabIndex = 19;
@@ -303,7 +309,7 @@
             btnS.BackColor = Color.Sienna;
             btnS.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnS.ForeColor = SystemColors.ButtonFace;
-            btnS.Location = new Point(586, 259);
+            btnS.Location = new Point(379, 52);
             btnS.Name = "btnS";
             btnS.Size = new Size(37, 32);
             btnS.TabIndex = 27;
@@ -315,7 +321,7 @@
             btnR.BackColor = Color.Sienna;
             btnR.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnR.ForeColor = SystemColors.ButtonFace;
-            btnR.Location = new Point(543, 259);
+            btnR.Location = new Point(336, 52);
             btnR.Name = "btnR";
             btnR.Size = new Size(37, 32);
             btnR.TabIndex = 26;
@@ -327,7 +333,7 @@
             btnQ.BackColor = Color.Sienna;
             btnQ.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnQ.ForeColor = SystemColors.ButtonFace;
-            btnQ.Location = new Point(500, 259);
+            btnQ.Location = new Point(293, 52);
             btnQ.Name = "btnQ";
             btnQ.Size = new Size(37, 32);
             btnQ.TabIndex = 25;
@@ -339,7 +345,7 @@
             btnP.BackColor = Color.Sienna;
             btnP.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnP.ForeColor = SystemColors.ButtonFace;
-            btnP.Location = new Point(457, 259);
+            btnP.Location = new Point(250, 52);
             btnP.Name = "btnP";
             btnP.Size = new Size(37, 32);
             btnP.TabIndex = 24;
@@ -351,7 +357,7 @@
             btnO.BackColor = Color.Sienna;
             btnO.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnO.ForeColor = SystemColors.ButtonFace;
-            btnO.Location = new Point(414, 259);
+            btnO.Location = new Point(207, 52);
             btnO.Name = "btnO";
             btnO.Size = new Size(37, 32);
             btnO.TabIndex = 23;
@@ -363,7 +369,7 @@
             btnN.BackColor = Color.Sienna;
             btnN.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnN.ForeColor = SystemColors.ButtonFace;
-            btnN.Location = new Point(371, 259);
+            btnN.Location = new Point(164, 52);
             btnN.Name = "btnN";
             btnN.Size = new Size(37, 32);
             btnN.TabIndex = 22;
@@ -375,7 +381,7 @@
             btnM.BackColor = Color.Sienna;
             btnM.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnM.ForeColor = SystemColors.ButtonFace;
-            btnM.Location = new Point(328, 259);
+            btnM.Location = new Point(121, 52);
             btnM.Name = "btnM";
             btnM.Size = new Size(37, 32);
             btnM.TabIndex = 21;
@@ -387,7 +393,7 @@
             btnL.BackColor = Color.Sienna;
             btnL.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnL.ForeColor = SystemColors.ButtonFace;
-            btnL.Location = new Point(285, 259);
+            btnL.Location = new Point(78, 52);
             btnL.Name = "btnL";
             btnL.Size = new Size(37, 32);
             btnL.TabIndex = 20;
@@ -399,7 +405,7 @@
             btnT.BackColor = Color.Sienna;
             btnT.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnT.ForeColor = SystemColors.ButtonFace;
-            btnT.Location = new Point(263, 297);
+            btnT.Location = new Point(56, 90);
             btnT.Name = "btnT";
             btnT.Size = new Size(37, 32);
             btnT.TabIndex = 28;
@@ -411,7 +417,7 @@
             btnCedilha.BackColor = Color.Sienna;
             btnCedilha.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCedilha.ForeColor = SystemColors.ButtonFace;
-            btnCedilha.Location = new Point(564, 297);
+            btnCedilha.Location = new Point(357, 90);
             btnCedilha.Name = "btnCedilha";
             btnCedilha.Size = new Size(37, 32);
             btnCedilha.TabIndex = 35;
@@ -423,7 +429,7 @@
             btnZ.BackColor = Color.Sienna;
             btnZ.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnZ.ForeColor = SystemColors.ButtonFace;
-            btnZ.Location = new Point(521, 297);
+            btnZ.Location = new Point(314, 90);
             btnZ.Name = "btnZ";
             btnZ.Size = new Size(37, 32);
             btnZ.TabIndex = 34;
@@ -435,7 +441,7 @@
             btnY.BackColor = Color.Sienna;
             btnY.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnY.ForeColor = SystemColors.ButtonFace;
-            btnY.Location = new Point(478, 297);
+            btnY.Location = new Point(271, 90);
             btnY.Name = "btnY";
             btnY.Size = new Size(37, 32);
             btnY.TabIndex = 33;
@@ -447,7 +453,7 @@
             btnX.BackColor = Color.Sienna;
             btnX.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnX.ForeColor = SystemColors.ButtonFace;
-            btnX.Location = new Point(435, 297);
+            btnX.Location = new Point(228, 90);
             btnX.Name = "btnX";
             btnX.Size = new Size(37, 32);
             btnX.TabIndex = 32;
@@ -459,7 +465,7 @@
             btnW.BackColor = Color.Sienna;
             btnW.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnW.ForeColor = SystemColors.ButtonFace;
-            btnW.Location = new Point(392, 297);
+            btnW.Location = new Point(185, 90);
             btnW.Name = "btnW";
             btnW.Size = new Size(37, 32);
             btnW.TabIndex = 31;
@@ -471,7 +477,7 @@
             btnV.BackColor = Color.Sienna;
             btnV.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnV.ForeColor = SystemColors.ButtonFace;
-            btnV.Location = new Point(349, 297);
+            btnV.Location = new Point(142, 90);
             btnV.Name = "btnV";
             btnV.Size = new Size(37, 32);
             btnV.TabIndex = 30;
@@ -483,7 +489,7 @@
             btnU.BackColor = Color.Sienna;
             btnU.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnU.ForeColor = SystemColors.ButtonFace;
-            btnU.Location = new Point(306, 297);
+            btnU.Location = new Point(99, 90);
             btnU.Name = "btnU";
             btnU.Size = new Size(37, 32);
             btnU.TabIndex = 29;
@@ -501,6 +507,7 @@
             btnNovoJogo.TabIndex = 37;
             btnNovoJogo.Text = "NOVO JOGO";
             btnNovoJogo.UseVisualStyleBackColor = false;
+            btnNovoJogo.Click += ReiniciarJogo;
             // 
             // label2
             // 
@@ -531,48 +538,81 @@
             lblPalavra.AutoSize = true;
             lblPalavra.Font = new Font("Candara", 26.25F, FontStyle.Bold, GraphicsUnit.Point);
             lblPalavra.ForeColor = Color.Peru;
-            lblPalavra.Location = new Point(220, 161);
+            lblPalavra.Location = new Point(208, 162);
             lblPalavra.Name = "lblPalavra";
             lblPalavra.Size = new Size(0, 42);
             lblPalavra.TabIndex = 41;
+            // 
+            // pnlBotoes
+            // 
+            pnlBotoes.Controls.Add(btnCedilha);
+            pnlBotoes.Controls.Add(btnA);
+            pnlBotoes.Controls.Add(btnB);
+            pnlBotoes.Controls.Add(btnC);
+            pnlBotoes.Controls.Add(btnD);
+            pnlBotoes.Controls.Add(btnE);
+            pnlBotoes.Controls.Add(btnZ);
+            pnlBotoes.Controls.Add(btnF);
+            pnlBotoes.Controls.Add(btnY);
+            pnlBotoes.Controls.Add(btnG);
+            pnlBotoes.Controls.Add(btnX);
+            pnlBotoes.Controls.Add(btnH);
+            pnlBotoes.Controls.Add(btnW);
+            pnlBotoes.Controls.Add(btnI);
+            pnlBotoes.Controls.Add(btnV);
+            pnlBotoes.Controls.Add(btnJ);
+            pnlBotoes.Controls.Add(btnU);
+            pnlBotoes.Controls.Add(btnK);
+            pnlBotoes.Controls.Add(btnT);
+            pnlBotoes.Controls.Add(btnL);
+            pnlBotoes.Controls.Add(btnS);
+            pnlBotoes.Controls.Add(btnM);
+            pnlBotoes.Controls.Add(btnR);
+            pnlBotoes.Controls.Add(btnN);
+            pnlBotoes.Controls.Add(btnQ);
+            pnlBotoes.Controls.Add(btnO);
+            pnlBotoes.Controls.Add(btnP);
+            pnlBotoes.Location = new Point(208, 210);
+            pnlBotoes.Name = "pnlBotoes";
+            pnlBotoes.Size = new Size(454, 125);
+            pnlBotoes.TabIndex = 42;
+            // 
+            // lblDica
+            // 
+            lblDica.AutoSize = true;
+            lblDica.Font = new Font("Candara", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblDica.Location = new Point(208, 144);
+            lblDica.Name = "lblDica";
+            lblDica.Size = new Size(0, 18);
+            lblDica.TabIndex = 43;
+            // 
+            // statusMensagem
+            // 
+            statusMensagem.Items.AddRange(new ToolStripItem[] { lblMensagemFinal });
+            statusMensagem.Location = new Point(0, 349);
+            statusMensagem.Name = "statusMensagem";
+            statusMensagem.Size = new Size(674, 22);
+            statusMensagem.TabIndex = 44;
+            statusMensagem.Text = "statusStrip1";
+            // 
+            // lblMensagemFinal
+            // 
+            lblMensagemFinal.Name = "lblMensagemFinal";
+            lblMensagemFinal.Size = new Size(0, 17);
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(674, 347);
+            ClientSize = new Size(674, 371);
+            Controls.Add(statusMensagem);
+            Controls.Add(lblDica);
+            Controls.Add(pnlBotoes);
             Controls.Add(lblPalavra);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(btnNovoJogo);
-            Controls.Add(btnCedilha);
-            Controls.Add(btnZ);
-            Controls.Add(btnY);
-            Controls.Add(btnX);
-            Controls.Add(btnW);
-            Controls.Add(btnV);
-            Controls.Add(btnU);
-            Controls.Add(btnT);
-            Controls.Add(btnS);
-            Controls.Add(btnR);
-            Controls.Add(btnQ);
-            Controls.Add(btnP);
-            Controls.Add(btnO);
-            Controls.Add(btnN);
-            Controls.Add(btnM);
-            Controls.Add(btnL);
-            Controls.Add(btnK);
-            Controls.Add(btnJ);
-            Controls.Add(btnI);
-            Controls.Add(btnH);
-            Controls.Add(btnG);
-            Controls.Add(btnF);
-            Controls.Add(btnE);
-            Controls.Add(btnD);
-            Controls.Add(btnC);
-            Controls.Add(btnB);
-            Controls.Add(btnA);
             Controls.Add(label1);
             Controls.Add(imgPernaE);
             Controls.Add(imgPernaD);
@@ -590,6 +630,9 @@
             ((System.ComponentModel.ISupportInitialize)imgBracoE).EndInit();
             ((System.ComponentModel.ISupportInitialize)imgPernaD).EndInit();
             ((System.ComponentModel.ISupportInitialize)imgPernaE).EndInit();
+            pnlBotoes.ResumeLayout(false);
+            statusMensagem.ResumeLayout(false);
+            statusMensagem.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -634,5 +677,9 @@
         public PictureBox imgPernaD;
         public PictureBox imgPernaE;
         public PictureBox imgForca;
+        private Panel pnlBotoes;
+        private Label lblDica;
+        private StatusStrip statusMensagem;
+        private ToolStripStatusLabel lblMensagemFinal;
     }
 }
